@@ -1,0 +1,115 @@
+/* App Component Styles */
+
+.App {
+  background-color: #f5f5f5;
+}
+
+.site-main.page-transition {
+  animation: page-enter 320ms ease-out both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-main.page-transition {
+    animation: none;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(240, 105, 35, 0.8), rgba(239, 92, 19, 0.8)), url('./assets/hero-header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+.services {
+  background-color: white;
+}
+
+.service-box {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+.about {
+  background-color: #f5f5f5;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1D1E1C, #313131);
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.cta-section h2 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1.2em;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8em;
+  }
+}

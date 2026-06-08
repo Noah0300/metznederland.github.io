@@ -1,0 +1,157 @@
+/* SollicitatieForm Component Styles */
+
+.sollicitatie-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sollicitatie-form h3 {
+  color: var(--heading-color);
+  margin-bottom: 0.4em;
+  font-size: 1.5em;
+}
+
+.sollicitatie-form .form-intro {
+  color: var(--text-color, #58595b);
+  margin-bottom: 1.5em;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Select — sluit aan op .form-control invoervelden */
+.sollicitatie-form select.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sollicitatie-form select.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(19, 160, 192, 0.12);
+}
+
+/* Bestandsvelden */
+.sol-file input[type='file'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px dashed var(--border-color);
+  border-radius: 3px;
+  font-size: 13px;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.sol-file input[type='file']:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.sol-file input[type='file']::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--primary-color, #13a0c0);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.sol-file input[type='file']::file-selector-button:hover {
+  opacity: 0.85;
+}
+
+.sol-file-hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Privacy-akkoord */
+.sol-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 22px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-color, #58595b);
+  cursor: pointer;
+}
+
+.sol-consent input[type='checkbox'] {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  accent-color: var(--primary-color, #13a0c0);
+  cursor: pointer;
+}
+
+.sol-consent a {
+  color: var(--primary-color, #13a0c0);
+}
+
+.sollicitatie-form .btn {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+}
+
+.sollicitatie-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Bevestigingspaneel na succesvol verzenden */
+.sol-success {
+  background-color: #fff;
+  padding: 48px 30px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.sol-success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background-color: #e8f5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sol-success-icon svg {
+  width: 30px;
+  height: 30px;
+  color: #2e7d32;
+}
+
+.sol-success h3 {
+  color: var(--heading-color);
+  font-size: 1.5em;
+  margin-bottom: 0.6em;
+}
+
+.sol-success p {
+  color: var(--text-color, #58595b);
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto;
+}

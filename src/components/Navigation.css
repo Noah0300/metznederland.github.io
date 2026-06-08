@@ -1,0 +1,367 @@
+/* ============================================
+   NAVIGATION - Professional Navigation Bar
+   ============================================ */
+
+.navbar {
+  background: #ffffff !important;
+  border-bottom: 3px solid #14A0BF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-default {
+  border: none;
+  background: inherit;
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* ============================================
+   NAVBAR HEADER & LOGO
+   ============================================ */
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #58595B;
+  font-weight: 700;
+  font-size: 18px;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.logo-image {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-image {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  color: #58595B;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo-text {
+    display: inline;
+  }
+}
+
+/* ============================================
+   NAVBAR TOGGLE (Mobile Menu Button)
+   ============================================ */
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: auto;
+  order: 2;
+}
+
+.navbar-toggle .icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #14A0BF;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.navbar-toggle:hover .icon-bar {
+  background-color: #008090;
+}
+
+@media (max-width: 970px) {
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+/* ============================================
+   NAVBAR COLLAPSE (Menu Container)
+   ============================================ */
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 0 20px;
+  gap: 0;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.navbar-collapse.in {
+  display: flex;
+}
+
+@media (max-width: 970px) {
+  .navbar-collapse {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: auto;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 10px;
+    order: 3;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .navbar-collapse.in {
+    display: flex;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+
+  .menu-item > a {
+    width: 100%;
+    height: auto;
+    padding: 12px 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* ============================================
+   NAVBAR MENU
+   ============================================ */
+
+.nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  height: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  flex: 1;
+}
+
+@media (max-width: 970px) {
+  .navbar-nav,
+  .nav.navbar-nav {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .menu-item {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ============================================
+   MENU ITEMS
+   ============================================ */
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu-item > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 18px;
+  color: #58595B;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+}
+
+.menu-item > a:hover {
+  color: #14A0BF;
+  background-color: rgba(20, 160, 191, 0.08);
+  border-bottom-color: #14A0BF;
+  text-decoration: none;
+}
+
+.menu-item.active > a {
+  color: #14A0BF;
+  border-bottom-color: #14A0BF;
+  background-color: rgba(20, 160, 191, 0.08);
+}
+
+/* ============================================
+   CONTACT BUTTON
+   ============================================ */
+
+.header-contact-button {
+  margin-left: auto;
+  padding-left: 20px;
+  flex-shrink: 0;
+}
+
+.header-contact-button .btn {
+  padding: 10px 24px;
+  background-color: #14A0BF;
+  color: #fff;
+  border: 2px solid #14A0BF;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header-contact-button .btn:hover {
+  background-color: #008090;
+  border-color: #008090;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(20, 160, 191, 0.3);
+  text-decoration: none;
+}
+
+.header-contact-button .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(20, 160, 191, 0.3);
+}
+
+@media (max-width: 970px) {
+  .header-contact-button {
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header-contact-button .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .navbar-header {
+    padding: 0 15px;
+  }
+
+  .navbar-container {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .logo-image {
+    height: 45px;
+  }
+
+  .navbar-brand {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .menu-item > a {
+    padding: 0 15px;
+    font-size: 13px;
+  }
+
+  .navbar-collapse {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 40px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .menu-item > a {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .header-contact-button .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}

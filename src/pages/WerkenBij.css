@@ -1,0 +1,594 @@
+/* ============================================
+   VACATURES PAGE — Visual redesign
+   ============================================ */
+
+.vacatures-page {
+  background: #ffffff;
+}
+
+/* ----- Hero (same theme as Projecten/Veiligheid/Over Ons/Werkwijze) ----- */
+.vac-hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.vac-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 30, 28, 0.92) 0%,
+    rgba(29, 30, 28, 0.75) 55%,
+    rgba(29, 30, 28, 0.55) 100%
+  );
+}
+
+.vac-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 20px;
+  max-width: 900px;
+}
+
+.vac-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.vac-eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: #13A0C0;
+}
+
+.vac-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 1.25rem 0 1.5rem;
+  color: #fff;
+}
+
+.vac-lead {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 760px;
+  margin: 0;
+}
+
+/* ----- Empty state card ----- */
+.vac-empty-section {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.vac-empty-card {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+  isolation: isolate;
+}
+
+.vac-empty-card::before {
+  /* orange top accent */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #13A0C0;
+  z-index: 2;
+}
+
+/* Main column */
+.vac-empty-main {
+  padding: 3rem 2.75rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vac-empty-label {
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(19, 160, 192, 0.12);
+  color: #13A0C0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vac-empty-title {
+  font-size: clamp(1.55rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.vac-empty-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  height: 3px;
+  background: #13A0C0;
+}
+
+.vac-empty-text {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 1.75rem;
+}
+
+.vac-empty-actions {
+  margin-top: 0.5rem;
+}
+
+.vac-empty-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background: #13A0C0;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.vac-empty-btn:hover {
+  background: #008090;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(19, 160, 192, 0.35);
+}
+
+.vac-empty-btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.vac-empty-btn:hover .vac-empty-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Aside (dark gradient panel) */
+.vac-empty-aside {
+  padding: 3rem 2.25rem;
+  background:
+    linear-gradient(155deg, rgba(29, 30, 28, 0.95) 0%, rgba(49, 49, 49, 0.92) 60%, rgba(19, 160, 192, 0.85) 130%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vac-empty-aside::after {
+  /* subtle orange decorative ring */
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(19, 160, 192, 0.3);
+  right: -90px;
+  bottom: -90px;
+  pointer-events: none;
+}
+
+.vac-aside-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #13A0C0;
+  margin-bottom: 0.85rem;
+}
+
+.vac-aside-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 1rem;
+  letter-spacing: -0.3px;
+}
+
+.vac-aside-text {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+}
+
+.vac-aside-btn {
+  align-self: flex-start;
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vac-aside-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vac-aside-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.vac-aside-contact:hover {
+  color: #ffd5bf;
+  text-decoration: none;
+}
+
+.vac-aside-contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(19, 160, 192, 0.2);
+  border: 1px solid rgba(19, 160, 192, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #13A0C0;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.vac-aside-contact:hover .vac-aside-contact-icon {
+  background: #13A0C0;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.vac-aside-contact-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .vac-empty-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .vac-hero {
+    min-height: 360px;
+  }
+
+  .vac-hero-inner {
+    padding: 3.5rem 20px;
+  }
+
+  .vac-empty-section {
+    padding: 3.5rem 0;
+  }
+
+  .vac-empty-main {
+    padding: 2.25rem 1.75rem 2.25rem;
+  }
+
+  .vac-empty-aside {
+    padding: 2.25rem 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vac-hero {
+    min-height: 320px;
+  }
+
+  .vac-hero-inner {
+    padding: 3rem 16px;
+  }
+
+  .vac-empty-section {
+    padding: 3rem 0;
+  }
+
+  .vac-empty-text,
+  .vac-aside-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+}
+
+/* ============================================
+   VACATURETEGELS — overzicht op /werken-bij
+   ============================================ */
+
+.vac-list-section {
+  padding: 4.5rem 0 1.5rem;
+  background: #ffffff;
+}
+
+.vac-list-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+}
+
+.vac-list-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1D1E1C;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.vac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.75rem;
+}
+
+.vac-tile {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e6e8e6;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.vac-tile:hover {
+  transform: translateY(-5px);
+  border-color: #d2d6d2;
+  box-shadow: 0 20px 42px rgba(29, 30, 28, 0.13);
+}
+
+.vac-tile-media {
+  position: relative;
+  height: 200px;
+  background: #eceeec;
+  overflow: hidden;
+}
+
+.vac-tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Grijs-witte filter */
+  filter: grayscale(100%) brightness(1.08) contrast(0.92);
+  transition: transform 0.5s ease;
+}
+
+/* Lichte witte waas over de foto */
+.vac-tile-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 249, 248, 0.28);
+  pointer-events: none;
+}
+
+.vac-tile:hover .vac-tile-media img {
+  transform: scale(1.05);
+}
+
+.vac-tile-badge {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  background: #13A0C0;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+}
+
+.vac-tile-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.6rem 1.75rem 1.75rem;
+}
+
+.vac-tile-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1D1E1C;
+  letter-spacing: -0.3px;
+  margin: 0 0 0.9rem;
+  line-height: 1.25;
+}
+
+.vac-tile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  margin-bottom: 1.1rem;
+}
+
+.vac-tile-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #6a6c67;
+}
+
+.vac-tile-meta-icon {
+  display: inline-flex;
+  color: #13A0C0;
+}
+
+.vac-tile-meta-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vac-tile-excerpt {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #5a5c58;
+  margin: 0 0 1.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vac-tile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #13A0C0;
+}
+
+.vac-tile-link-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.vac-tile:hover .vac-tile-link-arrow {
+  transform: translateX(5px);
+}
+
+/* ----- Open sollicitatie band (donker, goed leesbaar) ----- */
+.vac-open-section {
+  padding: 3.5rem 0 5rem;
+  background: #ffffff;
+}
+
+.vac-open-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem 3.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background:
+    linear-gradient(155deg, rgba(29, 30, 28, 0.97) 0%, rgba(40, 42, 40, 0.95) 55%, rgba(19, 160, 192, 0.85) 150%);
+  color: #fff;
+}
+
+.vac-open-card::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 2px solid rgba(19, 160, 192, 0.3);
+  right: -110px;
+  bottom: -110px;
+  pointer-events: none;
+}
+
+.vac-open-main {
+  position: relative;
+  z-index: 1;
+}
+
+.vac-open-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.4px;
+  margin: 0.5rem 0 0.85rem;
+}
+
+.vac-open-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 1.75rem;
+  max-width: 580px;
+}
+
+.vac-open-contacts {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .vac-open-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .vac-tile-body {
+    padding: 1.4rem 1.4rem 1.6rem;
+  }
+}

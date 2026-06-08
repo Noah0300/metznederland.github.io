@@ -1,0 +1,485 @@
+/* ============================================
+   OVER ONS PAGE — Visual redesign (matches Veiligheid)
+   ============================================ */
+
+.over-ons-page {
+  background: #ffffff;
+}
+
+/* ----- Hero ----- */
+.oo-hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.oo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 30, 28, 0.92) 0%,
+    rgba(29, 30, 28, 0.75) 55%,
+    rgba(29, 30, 28, 0.55) 100%
+  );
+}
+
+.oo-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 20px;
+  max-width: 900px;
+}
+
+.oo-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.oo-eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: #13A0C0;
+}
+
+.oo-eyebrow-dark {
+  color: #13A0C0;
+}
+
+.oo-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 1.25rem 0 0;
+  color: #fff;
+}
+
+/* ============================================
+   SECTION SHARED ELEMENTS
+   ============================================ */
+
+.oo-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  margin-bottom: 1.25rem;
+}
+
+.oo-section-eyebrow::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: #13A0C0;
+}
+
+.oo-section-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem;
+}
+
+/* ============================================
+   INTRO — two columns with photo + badge
+   ============================================ */
+
+.oo-intro {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.oo-intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.oo-intro-text p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 1.1rem;
+}
+
+.oo-section-lead {
+  font-size: 1.12rem !important;
+  color: #2a2a2a !important;
+  line-height: 1.7 !important;
+}
+
+.oo-intro-text strong {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.oo-intro-photo {
+  position: relative;
+}
+
+.oo-intro-photo::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  right: -1.25rem;
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(135deg, rgba(19, 160, 192, 0.18) 0%, rgba(19, 160, 192, 0) 70%);
+  border-radius: 14px;
+  z-index: 0;
+}
+
+.oo-intro-photo::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  width: 90px;
+  height: 90px;
+  background: #13A0C0;
+  border-radius: 14px;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.oo-intro-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.oo-intro-photo-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  background: #fff;
+  padding: 1.1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 4px solid #13A0C0;
+}
+
+.oo-intro-photo-badge-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #13A0C0;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.oo-intro-photo-badge-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #58595B;
+  margin-top: 0.4rem;
+}
+
+/* ============================================
+   STATS strip
+   ============================================ */
+
+.oo-stats {
+  padding: 3.5rem 0;
+  background: linear-gradient(135deg, #454647 0%, #2a2b2c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.oo-stats::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(19, 160, 192, 0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.oo-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.oo-stat {
+  text-align: center;
+  color: #fff;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.oo-stat + .oo-stat::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.oo-stat-value {
+  display: block;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #13A0C0;
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.oo-stat-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ============================================
+   WORKSHOP — reversed two columns
+   ============================================ */
+
+.oo-workshop {
+  padding: 6rem 0;
+  background: #f8f9fa;
+}
+
+.oo-workshop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.oo-workshop-text p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 1.1rem;
+}
+
+.oo-workshop-text p:last-child {
+  margin-bottom: 0;
+}
+
+.oo-workshop-photo {
+  position: relative;
+}
+
+.oo-workshop-photo::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  left: -1.25rem;
+  width: 70%;
+  height: 70%;
+  background: linear-gradient(135deg, rgba(19, 160, 192, 0.18) 0%, rgba(19, 160, 192, 0) 70%);
+  border-radius: 14px;
+  z-index: 0;
+}
+
+.oo-workshop-photo::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 90px;
+  height: 90px;
+  border: 4px solid #13A0C0;
+  border-radius: 14px;
+  z-index: 0;
+}
+
+.oo-workshop-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================
+   QUOTE
+   ============================================ */
+
+.oo-quote {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.oo-quote-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.oo-quote-mark {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+  color: rgba(19, 160, 192, 0.18);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.oo-quote-text {
+  position: relative;
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  line-height: 1.55;
+  color: #1a1a1a;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.oo-quote-text strong {
+  color: #13A0C0;
+  font-weight: 700;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .oo-intro-grid,
+  .oo-workshop-grid {
+    gap: 3rem;
+  }
+
+  .oo-intro-photo img,
+  .oo-workshop-photo img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 900px) {
+  .oo-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 1rem;
+  }
+
+  .oo-stat + .oo-stat::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .oo-hero {
+    min-height: 360px;
+  }
+
+  .oo-hero-inner {
+    padding: 3.5rem 20px;
+  }
+
+  .oo-intro,
+  .oo-workshop,
+  .oo-quote {
+    padding: 4rem 0;
+  }
+
+  .oo-intro-grid,
+  .oo-workshop-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .oo-workshop-photo {
+    order: -1;
+  }
+
+  .oo-intro-photo img,
+  .oo-workshop-photo img {
+    height: 360px;
+  }
+
+  .oo-quote-mark {
+    font-size: 7rem;
+    top: -1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oo-hero {
+    min-height: 320px;
+  }
+
+  .oo-intro,
+  .oo-workshop,
+  .oo-quote {
+    padding: 3rem 0;
+  }
+
+  .oo-intro-photo img,
+  .oo-workshop-photo img {
+    height: 280px;
+  }
+
+  .oo-intro-photo-badge {
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.85rem 1.1rem;
+  }
+
+  .oo-intro-photo-badge-num {
+    font-size: 1.5rem;
+  }
+
+  .oo-stats {
+    padding: 2.5rem 0;
+  }
+
+  .oo-stat-label {
+    font-size: 0.75rem;
+  }
+}

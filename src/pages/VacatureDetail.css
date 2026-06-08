@@ -1,0 +1,403 @@
+/* ============================================
+   VACATURE DETAIL — dynamische vacaturepagina
+   /werken-bij/:slug
+   ============================================ */
+
+.vacature-detail-page {
+  background: #ffffff;
+}
+
+/* ----- Hero (zelfde stijl als Projecten/Werken Bij/Over Ons) ----- */
+.vd-hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background-color: #1D1E1C;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Achtergrondfoto met grijs-witte filter (apart van de tekst) */
+.vd-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(1.08) contrast(0.92);
+}
+
+.vd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 30, 28, 0.93) 0%,
+    rgba(29, 30, 28, 0.78) 55%,
+    rgba(29, 30, 28, 0.58) 100%
+  );
+}
+
+.vd-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 20px;
+  max-width: 860px;
+}
+
+.vd-breadcrumb {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+  transition: color 0.2s ease;
+}
+
+.vd-breadcrumb:hover {
+  color: #fff;
+}
+
+.vd-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+}
+
+.vd-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.12;
+  margin: 0.85rem 0 1.5rem;
+  color: #fff;
+}
+
+.vd-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.vd-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.vd-meta-icon {
+  display: inline-flex;
+  color: #13A0C0;
+}
+
+.vd-meta-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ----- Shared buttons ----- */
+.vd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.9rem;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.vd-btn-primary {
+  background: #13A0C0;
+  color: #fff;
+}
+
+.vd-btn-primary:hover {
+  background: #008090;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(19, 160, 192, 0.4);
+  color: #fff;
+}
+
+.vd-btn-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.vd-btn:hover .vd-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ----- Body layout ----- */
+.vd-body-section {
+  padding: 4rem 0 5rem;
+}
+
+.vd-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.vd-main {
+  min-width: 0;
+}
+
+.vd-lead {
+  font-size: 1.18rem;
+  line-height: 1.7;
+  color: #2c2e2b;
+  font-weight: 500;
+  margin: 0 0 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #e6e8e6;
+}
+
+.vd-section {
+  margin-bottom: 2.5rem;
+}
+
+.vd-section:last-child {
+  margin-bottom: 0;
+}
+
+.vd-section-heading {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1D1E1C;
+  letter-spacing: -0.3px;
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #13A0C0;
+}
+
+.vd-section-subheading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c2e2b;
+  margin: 0 0 0.75rem;
+}
+
+.vd-section-text {
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: #444642;
+  margin: 0 0 1.1rem;
+}
+
+.vd-section-text:last-child {
+  margin-bottom: 0;
+}
+
+.vd-section-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vd-section-list li {
+  position: relative;
+  padding-left: 1.9rem;
+  font-size: 1.03rem;
+  line-height: 1.65;
+  color: #444642;
+  margin-bottom: 0.85rem;
+}
+
+.vd-section-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #13A0C0;
+}
+
+/* ----- Sticky apply sidebar ----- */
+.vd-aside {
+  position: sticky;
+  top: 100px;
+}
+
+.vd-apply-card {
+  background: #ffffff;
+  border: 1px solid #e6e8e6;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 18px 40px rgba(29, 30, 28, 0.08);
+}
+
+.vd-apply-kicker {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #13A0C0;
+  margin-bottom: 0.6rem;
+}
+
+.vd-apply-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1D1E1C;
+  letter-spacing: -0.3px;
+  margin: 0 0 0.85rem;
+  line-height: 1.25;
+}
+
+.vd-apply-text {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #5a5c58;
+  margin: 0 0 1.5rem;
+}
+
+.vd-apply-btn {
+  width: 100%;
+}
+
+.vd-contact-block {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #e6e8e6;
+}
+
+.vd-contact-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8c87;
+  margin-bottom: 0.85rem;
+}
+
+.vd-contact-person {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1D1E1C;
+  margin: 0 0 1rem;
+}
+
+.vd-contact-role {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #8a8c87;
+  margin-top: 0.1rem;
+}
+
+.vd-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #2c2e2b;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  transition: color 0.2s ease;
+}
+
+.vd-contact-row:hover {
+  color: #13A0C0;
+}
+
+.vd-contact-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(19, 160, 192, 0.1);
+  color: #13A0C0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.vd-contact-row:hover .vd-contact-icon {
+  background: #13A0C0;
+  color: #fff;
+}
+
+.vd-contact-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ----- Niet gevonden ----- */
+.vd-notfound {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.vd-notfound h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1D1E1C;
+  margin-bottom: 1rem;
+}
+
+.vd-notfound p {
+  color: #5a5c58;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+  .vd-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .vd-aside {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .vd-hero {
+    min-height: 420px;
+  }
+
+  .vd-hero-inner {
+    padding: 3rem 20px 2.5rem;
+  }
+
+  .vd-meta {
+    gap: 0.85rem 1.5rem;
+  }
+
+  .vd-hero-btn,
+  .vd-apply-btn {
+    width: 100%;
+  }
+
+  .vd-body-section {
+    padding: 3rem 0 4rem;
+  }
+}

@@ -1,0 +1,176 @@
+/* Solliciteren Page Styles */
+
+.sol-page {
+  background-color: #f6f7f8;
+}
+
+/* Hero */
+.sol-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 9rem 0 6rem;
+}
+
+.sol-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(40, 42, 44, 0.78) 0%,
+    rgba(40, 42, 44, 0.88) 100%
+  );
+}
+
+.sol-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.sol-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #13a0c0;
+  margin-bottom: 1rem;
+}
+
+.sol-page-title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: #fff;
+  margin: 0 0 1.25rem;
+}
+
+.sol-page-lead {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Main layout */
+.sol-main {
+  padding: 4.5rem 0 5.5rem;
+}
+
+.sol-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Info-kaart */
+.sol-info-card {
+  background-color: #454647;
+  color: #fff;
+  padding: 36px 32px;
+  border-radius: 3px;
+}
+
+.sol-info-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #13a0c0;
+  margin-bottom: 0.6rem;
+}
+
+.sol-info-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.9rem;
+}
+
+.sol-info-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 1.6rem;
+}
+
+.sol-info-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.sol-info-row:hover {
+  opacity: 0.8;
+}
+
+.sol-info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(19, 160, 192, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sol-info-icon svg {
+  width: 18px;
+  height: 18px;
+  color: #13a0c0;
+}
+
+.sol-info-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.sol-info-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.sol-info-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sol-info-note {
+  margin: 1.6rem 0 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sol-info-note a {
+  color: #13a0c0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sol-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sol-hero {
+    padding: 7rem 0 4rem;
+  }
+
+  .sol-main {
+    padding: 3rem 0 4rem;
+  }
+}

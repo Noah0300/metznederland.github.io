@@ -1,0 +1,407 @@
+/* ============================================
+   VEILIGHEID PAGE — Visual redesign
+   ============================================ */
+
+.veiligheid-page {
+  background: #ffffff;
+}
+
+/* ----- Hero ----- */
+.vh-hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.vh-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(29, 30, 28, 0.92) 0%,
+    rgba(29, 30, 28, 0.75) 55%,
+    rgba(29, 30, 28, 0.55) 100%
+  );
+}
+
+.vh-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 5rem 20px;
+  max-width: 900px;
+}
+
+.vh-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.vh-eyebrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  background: #13A0C0;
+}
+
+.vh-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin: 1.25rem 0 1.5rem;
+  color: #fff;
+}
+
+.vh-lead {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 760px;
+  margin: 0;
+}
+
+/* ============================================
+   SECTIONS — info-focused with modest imagery
+   ============================================ */
+
+.vh-section {
+  padding: 5.5rem 0;
+  background: #ffffff;
+}
+
+.vh-section-alt {
+  background: #f8f9fa;
+}
+
+.vh-section-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.vh-section-grid-reverse {
+  grid-template-columns: 1fr 1.3fr;
+}
+
+.vh-section-content {
+  max-width: 620px;
+}
+
+.vh-section-narrow {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.vh-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  margin-bottom: 1.25rem;
+}
+
+.vh-section-eyebrow::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: #13A0C0;
+}
+
+.vh-section-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  line-height: 1.18;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem;
+}
+
+.vh-section-content p,
+.vh-section-narrow p {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #555;
+  margin: 0 0 1.2rem;
+}
+
+.vh-section-content p:last-child,
+.vh-section-narrow p:last-child {
+  margin-bottom: 0;
+}
+
+/* Photo treatment — modest size, subtle accents */
+.vh-section-photo {
+  position: relative;
+}
+
+.vh-section-photo::before {
+  content: '';
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  background: linear-gradient(135deg, rgba(19, 160, 192, 0.14) 0%, rgba(19, 160, 192, 0) 70%);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+.vh-section-grid-reverse .vh-section-photo::before {
+  inset: 1rem 1rem -1rem -1rem;
+  background: linear-gradient(225deg, rgba(19, 160, 192, 0.14) 0%, rgba(19, 160, 192, 0) 70%);
+}
+
+.vh-section-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+}
+
+/* ============================================
+   STATS — light variant
+   ============================================ */
+
+.vh-stats {
+  padding: 3.5rem 0;
+  background: #f8f9fa;
+  border-top: 1px solid #eaecef;
+  border-bottom: 1px solid #eaecef;
+}
+
+.vh-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vh-stat {
+  text-align: center;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.vh-stat + .vh-stat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: rgba(19, 160, 192, 0.25);
+}
+
+.vh-stat-value {
+  display: block;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #13A0C0;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.vh-stat-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #58595B;
+}
+
+/* ============================================
+   CHIP LIST
+   ============================================ */
+
+.vh-chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.vh-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: 1px solid rgba(19, 160, 192, 0.35);
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.vh-chip:hover {
+  background: #13A0C0;
+  color: #fff;
+  border-color: #13A0C0;
+}
+
+.vh-chip-list-subtle {
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+}
+
+.vh-chip-subtle {
+  background: rgba(19, 160, 192, 0.08);
+  border-color: transparent;
+  color: #2a2a2a;
+  font-size: 0.88rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.vh-chip-subtle:hover {
+  background: #13A0C0;
+  color: #fff;
+}
+
+/* ============================================
+   PARTNER BADGE — Erasmus MC
+   ============================================ */
+
+.vh-partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eaecef;
+  border-left: 4px solid #13A0C0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.vh-partner-badge-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #13A0C0;
+  padding: 0.3rem 0.7rem;
+  background: rgba(19, 160, 192, 0.12);
+  border-radius: 999px;
+}
+
+.vh-partner-badge-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .vh-section-grid,
+  .vh-section-grid-reverse {
+    gap: 3rem;
+  }
+
+  .vh-section-photo img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vh-hero {
+    min-height: 360px;
+  }
+
+  .vh-hero-inner {
+    padding: 3.5rem 20px;
+  }
+
+  .vh-section {
+    padding: 3.5rem 0;
+  }
+
+  .vh-section-grid,
+  .vh-section-grid-reverse {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .vh-section-grid-reverse .vh-section-photo {
+    order: -1;
+  }
+
+  .vh-section-photo img {
+    height: 280px;
+  }
+
+  .vh-section-photo::before,
+  .vh-section-grid-reverse .vh-section-photo::before {
+    inset: 0.5rem -0.5rem -0.5rem 0.5rem;
+  }
+
+  .vh-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .vh-stat + .vh-stat::before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vh-hero {
+    min-height: 320px;
+  }
+
+  .vh-section {
+    padding: 2.75rem 0;
+  }
+
+  .vh-stats {
+    padding: 2.5rem 0;
+  }
+
+  .vh-section-content p,
+  .vh-section-narrow p {
+    font-size: 0.95rem;
+  }
+
+  .vh-section-photo img {
+    height: 230px;
+  }
+
+  .vh-partner-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

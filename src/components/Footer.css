@@ -1,0 +1,207 @@
+/* Footer Component Styles */
+
+.footer {
+  background-color: #454647;
+  color: #ffffff;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+.footer-content {
+  padding: 50px 0 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h4 {
+  color: #13A0C0;
+  margin-bottom: 1.5rem;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.footer-section p {
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #13A0C0;
+}
+
+/* About Section */
+.footer-about {
+  align-items: flex-start;
+}
+
+.company-logo-text {
+  margin-bottom: 1.5rem;
+}
+
+.company-logo-text a {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.footer-logo {
+  height: 110px;
+  width: auto;
+  margin-bottom: 1rem;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-logo:hover {
+  opacity: 0.8;
+}
+
+.footer-about p {
+  font-size: 13px;
+}
+
+/* Juridisch Section */
+.footer-juridisch ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-juridisch ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-juridisch ul li a {
+  font-size: 13px;
+}
+
+/* Contact Section */
+.footer-contact p {
+  margin: 0 0 0.8rem 0;
+}
+
+.footer-contact strong {
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+/* Partnership Section */
+.footer-partnership {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.partnership-text {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.partnership-text strong {
+  color: #ffffff;
+}
+
+.metz-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.metz-logo:hover {
+  opacity: 0.8;
+}
+
+/* Social Media Section */
+.footer-social {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  height: 40px;
+  width: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer-bottom a {
+  color: #13A0C0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 30px 0 20px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-section {
+    align-items: flex-start;
+  }
+
+  .footer-partnership {
+    align-items: flex-start;
+  }
+}
+
